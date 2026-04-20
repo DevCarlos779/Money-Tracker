@@ -6,15 +6,24 @@ import {
   Progress,
 } from "./SavingCardStyles";
 import type { SavingApi } from "../../../contexts/SavingsContext";
+import { TransactionContext } from "../../../contexts/TransactionsContext";
+import { useContext } from "react";
 
 interface SavingCardProps {
   saving: SavingApi;
 }
 
 export function SavingCard({ saving }: SavingCardProps) {
-  const actualPercentProgressBar = Math.min(
-    (saving.actualValue / saving.meta) * 100,
+  const { transactions } = useContext(TransactionContext);
+
+  const filteredTransactions = transactions.filter(
+    (t) => t.description === (saving?.description ?? ""),
   );
+  const actualValue = filteredTransactions.reduce((acc, t) => {
+    return acc + t.amount;
+  }, 0);
+
+  const actualPercentProgressBar = Math.min((actualValue / saving.meta) * 100);
 
   return (
     <Card to={`/savings/${saving.id}`}>
@@ -26,7 +35,7 @@ export function SavingCard({ saving }: SavingCardProps) {
         {new Intl.NumberFormat("pt-BR", {
           style: "currency",
           currency: "BRL",
-        }).format(saving.actualValue)}{" "}
+        }).format(actualValue)}{" "}
         /{" "}
         {new Intl.NumberFormat("pt-BR", {
           style: "currency",
@@ -46,7 +55,7 @@ export function SavingCard({ saving }: SavingCardProps) {
         {new Intl.NumberFormat("pt-BR", {
           style: "currency",
           currency: "BRL",
-        }).format(saving.meta - saving.actualValue)}
+        }).format(saving.meta - actualValue)}
       </p>
     </Card>
   );

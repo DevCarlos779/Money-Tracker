@@ -4,6 +4,7 @@ import { api } from "../../lib/api";
 export interface Transaction {
   description: string;
   category: string;
+  customCategory: string;
   date: string;
   amount: number;
   type: "income" | "outcome";

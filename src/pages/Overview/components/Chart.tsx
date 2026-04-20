@@ -25,6 +25,7 @@ export function Chart({ data }: ChartProps) {
     { category: "Shopping", total: 0 },
     { category: "Health", total: 0 },
     { category: "Others", total: 0 },
+    { category: "Saving", total: 0 },
   ];
 
   const chartData = defaultData.map((defaultItem) => {

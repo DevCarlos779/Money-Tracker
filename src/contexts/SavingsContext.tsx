@@ -1,26 +1,22 @@
 import { createContext, useEffect, useState, type ReactNode } from "react";
-import type { Transaction } from "./TransactionsContext";
 import { api } from "../../lib/api";
 
 export interface Saving {
   description: string;
-  actualValue: number;
   meta: number;
-  deposits: Transaction[];
 }
 
 export interface SavingApi {
   id: string;
   description: string;
-  actualValue: number;
   meta: number;
-  deposits: Transaction[];
 }
 
 interface SavingsContextBody {
   savings: SavingApi[];
   createNewSaving: (saving: Saving) => void;
   getSavingDetails: (id: string) => Promise<SavingApi | undefined>;
+  updateActualValueSaving: (saving: SavingApi) => void;
 }
 
 interface SavingsContextProviderProps {
@@ -51,6 +47,14 @@ export function SavingsContextProvider({
     await getSavings();
   }
 
+  async function updateActualValueSaving(saving: SavingApi) {
+    await api.put(`/savings/${saving.id}`, {
+      ...saving,
+    });
+
+    await getSavings();
+  }
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     getSavings();
@@ -58,7 +62,12 @@ export function SavingsContextProvider({
 
   return (
     <SavingsContext.Provider
-      value={{ savings, createNewSaving, getSavingDetails }}
+      value={{
+        savings,
+        createNewSaving,
+        getSavingDetails,
+        updateActualValueSaving,
+      }}
     >
       {children}
     </SavingsContext.Provider>

@@ -1,29 +1,27 @@
 {
   "transactions": [
     {
-      "description": "dasd",
-      "category": "Salary",
+      "id": "4dppuMV5Mbg",
+      "description": "Transaciton Number 2",
+      "category": "Saving",
       "customCategory": "",
-      "date": "Mon Apr 13 2026 12:49:34 GMT-0300 (Horário Padrão de Brasília)",
-      "amount": 2321,
-      "type": "income",
-      "id": "Za1qrdclvEk"
+      "date": "Mon Apr 20 2026 18:48:36 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 12312,
+      "type": "outcome"
     }
   ],
   "savings": [
     {
       "id": "120021",
       "description": "Transaciton Number 2",
-      "actualValue": 1312,
-      "meta": 12312,
-      "depositos": []
+      "actualValue": 0,
+      "meta": 12312
     },
     {
+      "id": "cIa70lWPq7w",
       "description": "dasdas",
       "actualValue": 0,
-      "meta": 21312,
-      "deposits": [],
-      "id": "cIa70lWPq7w"
+      "meta": 21312
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

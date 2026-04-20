@@ -118,6 +118,7 @@ export function EditTransactionModal({
               required
               {...register("description")}
             />
+ 
             <input
               type="number"
               placeholder="Preço"
