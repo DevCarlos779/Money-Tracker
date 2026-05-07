@@ -3,9 +3,12 @@ import styled from "styled-components";
 export const TableWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
+  display: flex;
+  align-items: start;
+  justify-content: center;
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 
   h2 {
     width: 100%;
@@ -92,5 +95,30 @@ export const DeleteButton = styled.button`
     background-color: ${({ theme }) => theme["red-300"]};
     border: 2px solid ${({ theme }) => theme["red-500"]};
     color: ${({ theme }) => theme.white};
+  }
+`;
+
+export const Conteiner = styled.div`
+  padding: 30px;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: ${({ theme }) => theme.white};
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+`;
+
+export const DontHaveTransactionsConteiner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  color: ${({ theme }) => theme["gray-400"]};
+
+  h2 {
+    color: ${({ theme }) => theme.black};
   }
 `;

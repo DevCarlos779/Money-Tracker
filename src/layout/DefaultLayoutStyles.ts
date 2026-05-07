@@ -8,11 +8,14 @@ export const Content = styled.div`
 
 export const NavBar = styled.nav`
   width: 280px;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme["gray-800"]};
 `;
 
 export const Main = styled.main`
+  min-height: 100vh;
   flex: 1;
   padding: 40px;
   background-color: ${({ theme }) => theme["gray-50"]};
+  overflow-y: auto;
 `;

@@ -1,5 +1,6 @@
 import {
   DeleteButton,
+  DontHaveTransactionsConteiner,
   Table,
   TableWrapper,
 } from "./SavingTransactionsTableStyles";
@@ -8,7 +9,7 @@ import {
   type TransactionApi,
 } from "../../../contexts/TransactionsContext";
 import { useContext } from "react";
-import { Trash2 } from "lucide-react";
+import { Trash2, Wallet } from "lucide-react";
 import { type SavingApi } from "../../../contexts/SavingsContext";
 import { EditSavingTransactionModal } from "./EditSavingTransactionModal";
 
@@ -74,7 +75,11 @@ export function SavingTransactionsTable({
           </tbody>
         </Table>
       ) : (
-        <h2>Don't have transactions</h2>
+        <DontHaveTransactionsConteiner>
+          <Wallet size={40} />
+          <h2>Don't have transactions</h2>
+          <p>Add your first transaction to get started.</p>
+        </DontHaveTransactionsConteiner>
       )}
     </TableWrapper>
   );

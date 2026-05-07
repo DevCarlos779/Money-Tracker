@@ -7,6 +7,7 @@ export const theme = {
   "red-300": "#F28B8B",
   "red-500": "#D64545",
   "red-600": "#B93838",
+  "red-700": "#832828",
 
   white: "#FFFFFF",
   black: "#121212",
@@ -15,6 +16,7 @@ export const theme = {
   "gray-100": "#F3F4F6",
   "gray-200": "#E5E7EB",
   "gray-300": "#D1D5DB",
+  "gray-350": "#BFC7CF",
   "gray-400": "#9CA3AF",
   "gray-500": "#6B7280",
   "gray-600": "#4B5563",

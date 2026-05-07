@@ -1,41 +1,72 @@
 import styled from "styled-components";
 
 export const SavingContainer = styled.div`
-  background-color: blue;
+  overflow: hidden;
   width: 100%;
-  height: 90vh;
+  min-height: 100%;
   padding: 24px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 32px;
   color: ${({ theme }) => theme.white};
+
+  a {
+    text-decoration: none;
+    color: ${({ theme }) => theme["green-500"]};
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  a:hover {
+    color: ${({ theme }) => theme["green-700"]};
+  }
 `;
 
-export const SavingDetailsContainer = styled.div`
-  overflow: hidden;
-  flex: 1;
-  background-color: ${({ theme }) => theme.black};
+export const SavingInfoConteiner = styled.div`
+  width: 100%;
+  background-color: ${({ theme }) => theme["green-700"]};
   border: 2px solid ${({ theme }) => theme.white};
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+`;
+
+export const IconCreditCardConteiner = styled.div`
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme["green-500"]};
+  color: ${({ theme }) => theme.white};
   display: flex;
   align-items: center;
-  gap: 24px;
-  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 `;
 
 export const InfoSaving = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: ${({ theme }) => theme.black};
-  border: 2px solid ${({ theme }) => theme.white};
-  border-radius: 12px;
-  padding: 15px;
+  flex: 1;
   display: flex;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 10px;
+  gap: 15px;
   flex-direction: column;
+
+  h1 {
+    color: ${({ theme }) => theme.white};
+    font-size: 30px;
+  }
+
+  p {
+    color: ${({ theme }) => theme["gray-300"]};
+    font-size: 16px;
+  }
 `;
 
 export const SavingTransactionsTableContainer = styled.div`
@@ -44,17 +75,19 @@ export const SavingTransactionsTableContainer = styled.div`
   overflow: hidden;
   width: 100%;
   flex: 1;
-  background-color: ${({ theme }) => theme.black};
   border: 2px solid ${({ theme }) => theme.white};
   border-radius: 12px;
-  padding: 15px;
+  background: ${({ theme }) => theme.white};
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 24px;
 `;
 
 export const HeaderTransactionsPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 24px;
+  color: ${({ theme }) => theme.black};
 
   button {
     padding: 10px 16px;
@@ -68,10 +101,27 @@ export const HeaderTransactionsPage = styled.div`
   }
 
   button:hover {
-    background-color: ${({ theme }) => theme["green-300"]};
+    background-color: ${({ theme }) => theme["green-700"]};
     border: 2px solid ${({ theme }) => theme["green-500"]};
     color: ${({ theme }) => theme.white};
   }
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+`;
+
+export const IconTransactionsTableConteiner = styled.div`
+  border-radius: 12px;
+  background-color: ${({ theme }) => theme["green-500"]};
+  color: ${({ theme }) => theme.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
 `;
 
 export const ContainerActionButtons = styled.div`
@@ -81,10 +131,41 @@ export const ContainerActionButtons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
 
-  button {
-    flex: 1;
-    padding: 10px 20px;
+export const Button = styled.button`
+  flex: 1;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: ${({ theme }) => theme["gray-300"]};
+
+  &:hover {
+    color: ${({ theme }) => theme.white};
+  }
+`;
+
+export const EditButton = styled(Button)`
+  background-color: ${({ theme }) => theme["green-500"]};
+  border: 2px solid ${({ theme }) => theme["green-700"]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme["green-700"]};
+  }
+`;
+
+export const DeleteButton = styled(Button)`
+  background-color: ${({ theme }) => theme["red-500"]};
+  border: 2px solid ${({ theme }) => theme["red-700"]};
+
+  &:hover {
+    background-color: ${({ theme }) => theme["red-700"]};
   }
 `;
 
@@ -92,7 +173,7 @@ export const ProgressBarContainer = styled.div`
   position: relative;
   width: 100%;
   height: 10px;
-  background-color: ${({ theme }) => theme["gray-300"]};
+  background-color: ${({ theme }) => theme["gray-350"]};
   border-radius: 8px;
 `;
 
@@ -101,7 +182,7 @@ interface ProgressProps {
 }
 
 export const Progress = styled.div<ProgressProps>`
-  background-color: ${({ theme }) => theme["green-700"]};
+  background-color: ${({ theme }) => theme["green-500"]};
   position: relative;
   width: ${({ progress }) => progress}%;
   height: 10px;

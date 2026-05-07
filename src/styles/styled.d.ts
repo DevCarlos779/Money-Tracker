@@ -10,6 +10,7 @@ declare module "styled-components" {
     "red-300": string;
     "red-500": string;
     "red-600": string;
+    "red-700": string;
 
     white: string;
     black: string;
@@ -18,6 +19,7 @@ declare module "styled-components" {
     "gray-100": string;
     "gray-200": string;
     "gray-300": string;
+    "gray-350": string;
     "gray-400": string;
     "gray-500": string;
     "gray-600": string;

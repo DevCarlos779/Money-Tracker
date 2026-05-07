@@ -77,6 +77,18 @@ export const Table = styled.table`
   }
 `;
 
+export const DontHaveTransactionsConteiner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme["gray-400"]};
+
+  h2 {
+    color: ${({ theme }) => theme.black};
+  }
+`;
+
 export const DeleteButton = styled.button`
   border-radius: 6px;
   cursor: pointer;

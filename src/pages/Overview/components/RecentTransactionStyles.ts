@@ -52,3 +52,16 @@ export const Table = styled.table`
     border-bottom: none;
   }
 `;
+
+export const DontHaveTransactionsConteiner = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: ${({ theme }) => theme["gray-400"]};
+
+  h2 {
+    color: ${({ theme }) => theme.black};
+  }
+`;

@@ -3,17 +3,29 @@ import { SavingsContext, type SavingApi } from "../../contexts/SavingsContext";
 import { NavLink, useParams } from "react-router-dom";
 import {
   ContainerActionButtons,
+  DeleteButton,
+  EditButton,
   HeaderTransactionsPage,
+  IconCreditCardConteiner,
+  IconTransactionsTableConteiner,
   InfoSaving,
   Progress,
   ProgressBarContainer,
   SavingContainer,
-  SavingDetailsContainer,
+  SavingInfoConteiner,
   SavingTransactionsTableContainer,
 } from "./SavingDetailsStyles";
 import { SavingTransactionsTable } from "./components/SavingTransactionsTable";
 import { NewSavingTransactionModal } from "./components/NewSavingTransactionModal";
 import { TransactionContext } from "../../contexts/TransactionsContext";
+
+import {
+  ArrowLeft,
+  CreditCard,
+  TableOfContents,
+  Pencil,
+  Trash2,
+} from "lucide-react";
 
 export function SavingDetails() {
   const { transactions } = useContext(TransactionContext);
@@ -47,12 +59,18 @@ export function SavingDetails() {
   const actualPercentProgressBar = Math.min((actualValue / saving.meta) * 100);
 
   return (
-    <div>
+    <>
       {saving ? (
         <SavingContainer>
-          <NavLink to="/savings">Voltar</NavLink>
+          <NavLink to="/savings">
+            <ArrowLeft />
+            Voltar
+          </NavLink>
 
-          <SavingDetailsContainer>
+          <SavingInfoConteiner>
+            <IconCreditCardConteiner>
+              <CreditCard size={40} />
+            </IconCreditCardConteiner>
             <InfoSaving>
               <h1>{saving.description}</h1>
               <p>
@@ -84,23 +102,34 @@ export function SavingDetails() {
                 }).format(saving.meta - actualValue)}
               </p>
             </InfoSaving>
-            <SavingTransactionsTableContainer>
-              <HeaderTransactionsPage>
+          </SavingInfoConteiner>
+          <SavingTransactionsTableContainer>
+            <HeaderTransactionsPage>
+              <div>
+                <IconTransactionsTableConteiner>
+                  <TableOfContents />
+                </IconTransactionsTableConteiner>
                 <h1>Transactions</h1>
+              </div>
 
-                <NewSavingTransactionModal saving={saving} />
-              </HeaderTransactionsPage>
-              <SavingTransactionsTable saving={saving} />
-            </SavingTransactionsTableContainer>
-            <ContainerActionButtons>
-              <button>editar</button>
-              <button>excluir</button>
-            </ContainerActionButtons>
-          </SavingDetailsContainer>
+              <NewSavingTransactionModal saving={saving} />
+            </HeaderTransactionsPage>
+            <SavingTransactionsTable saving={saving} />
+          </SavingTransactionsTableContainer>
+          <ContainerActionButtons>
+            <EditButton>
+              <Pencil />
+              editar
+            </EditButton>
+            <DeleteButton>
+              <Trash2 />
+              excluir
+            </DeleteButton>
+          </ContainerActionButtons>
         </SavingContainer>
       ) : (
         <h1>Carregando...</h1>
       )}
-    </div>
+    </>
   );
 }
