@@ -17,6 +17,7 @@ interface SavingsContextBody {
   createNewSaving: (saving: Saving) => void;
   getSavingDetails: (id: string) => Promise<SavingApi | undefined>;
   updateActualValueSaving: (saving: SavingApi) => void;
+  deleteSaving: (id: string) => void;
 }
 
 interface SavingsContextProviderProps {
@@ -55,6 +56,11 @@ export function SavingsContextProvider({
     await getSavings();
   }
 
+  async function deleteSaving(id: string) {
+    await api.delete(`/savings/${id}`);
+    await getSavings();
+  }
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     getSavings();
@@ -67,6 +73,7 @@ export function SavingsContextProvider({
         createNewSaving,
         getSavingDetails,
         updateActualValueSaving,
+        deleteSaving,
       }}
     >
       {children}

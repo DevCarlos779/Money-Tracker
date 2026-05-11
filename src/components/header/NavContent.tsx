@@ -10,7 +10,9 @@ export function NavContent() {
   return (
     <ContentContainer>
       <Div>
-        <h1>MoneyTracker</h1>
+        <h1>
+          Money<strong>Tracker</strong>
+        </h1>
         <DivButtonsNavBar>
           <NavButton to="/">
             <PanelsTopLeft size={20} strokeWidth={2} />

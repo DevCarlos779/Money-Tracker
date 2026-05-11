@@ -78,14 +78,14 @@ export function NewSavingTransactionModal({
       }}
     >
       <Dialog.Trigger asChild>
-        <NewTransactionButton>Nova transação</NewTransactionButton>
+        <NewTransactionButton>New Transaction</NewTransactionButton>
       </Dialog.Trigger>
 
       <Dialog.Portal>
         <Overlay />
 
         <Content>
-          <Dialog.Title>Nova Transação</Dialog.Title>
+          <Dialog.Title>New Transaction</Dialog.Title>
 
           <CloseButton>
             <X size={24} />
@@ -94,13 +94,13 @@ export function NewSavingTransactionModal({
           <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
             <input
               type="number"
-              placeholder="Preço"
+              placeholder="Price"
               required
               {...register("price", { valueAsNumber: true })}
             />
 
             <button type="submit" disabled={isSubmitting}>
-              Cadastrar
+              Register
             </button>
           </form>
         </Content>

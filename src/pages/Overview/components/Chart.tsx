@@ -7,6 +7,11 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+import {
+  Conteiner,
+  DontHaveTransactionsConteiner,
+} from "../../Transactions/components/TransactionsTableStyles";
+import { Receipt } from "lucide-react";
 
 interface ObjectGastos {
   category: string;
@@ -39,20 +44,42 @@ export function Chart({ data }: ChartProps) {
     };
   });
 
+  const hasData = chartData.some((item) => item.total > 0);
+
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={chartData}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="category" />
-        <YAxis />
-        <Tooltip
-          formatter={(value) => {
-            const val = Number(value ?? 0);
-            return [`R$ ${val.toFixed(2).replace(".", ",")}`, "Total Spent"];
-          }}
-        />
-        <Bar dataKey="total" fill="#B93838" />
-      </BarChart>
-    </ResponsiveContainer>
+    <>
+      {!hasData ? (
+        <Conteiner>
+          <DontHaveTransactionsConteiner>
+            <Receipt size={40} />
+            <h2>No expense data yet</h2>
+            <p>Add your first expense to get started.</p>
+          </DontHaveTransactionsConteiner>
+        </Conteiner>
+      ) : (
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={chartData}>
+            <CartesianGrid strokeDasharray="3 3" />
+
+            <XAxis dataKey="category" />
+
+            <YAxis />
+
+            <Tooltip
+              formatter={(value) => {
+                const val = Number(value ?? 0);
+
+                return [
+                  `R$ ${val.toFixed(2).replace(".", ",")}`,
+                  "Total Spent",
+                ];
+              }}
+            />
+
+            <Bar dataKey="total" fill="#B93838" />
+          </BarChart>
+        </ResponsiveContainer>
+      )}
+    </>
   );
 }

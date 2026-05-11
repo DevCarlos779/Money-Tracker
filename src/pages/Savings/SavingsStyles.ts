@@ -50,7 +50,25 @@ export const SavingsContainer = styled.div`
 
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  padding: 30px;
+  box-sizing: border-box;
+`;
+
+export const Conteiner = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 40px;
+
+  overflow-y: auto;
+
+  border-radius: 12px;
+  background: ${({ theme }) => theme.white};
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 
   padding: 30px;
   box-sizing: border-box;

@@ -49,9 +49,9 @@ export function SavingCard({ saving }: SavingCardProps) {
           }
         />
       </ProgressBarContainer>
-      <strong>{actualPercentProgressBar.toFixed(2)}% concluído</strong>
+      <strong>{actualPercentProgressBar.toFixed(2)}% concluded</strong>
       <p>
-        Faltam R$
+        Missing R$
         {new Intl.NumberFormat("pt-BR", {
           style: "currency",
           currency: "BRL",

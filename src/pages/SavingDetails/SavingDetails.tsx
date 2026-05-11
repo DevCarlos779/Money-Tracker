@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { SavingsContext, type SavingApi } from "../../contexts/SavingsContext";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import {
   ContainerActionButtons,
   DeleteButton,
@@ -26,12 +26,14 @@ import {
   Pencil,
   Trash2,
 } from "lucide-react";
+import { toast } from "react-toastify";
 
 export function SavingDetails() {
   const { transactions } = useContext(TransactionContext);
-  const { getSavingDetails } = useContext(SavingsContext);
+  const { getSavingDetails, deleteSaving } = useContext(SavingsContext);
   const [saving, setSaving] = useState<SavingApi | undefined>(undefined);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   async function getSaving() {
     if (id) {
@@ -57,6 +59,16 @@ export function SavingDetails() {
   }
 
   const actualPercentProgressBar = Math.min((actualValue / saving.meta) * 100);
+
+  async function handleDeleteSaving() {
+    if (id) {
+      await deleteSaving(id);
+      toast.success("Saving deleted successfully!");
+      navigate("/savings");
+    } else {
+      toast.dismiss("Saving Don't deleted!");
+    }
+  }
 
   return (
     <>
@@ -93,9 +105,9 @@ export function SavingDetails() {
                   }
                 />
               </ProgressBarContainer>
-              <strong>{actualPercentProgressBar.toFixed(2)}% concluído</strong>
+              <strong>{actualPercentProgressBar.toFixed(2)}% concluded</strong>
               <p>
-                Faltam R$
+                Missing R$
                 {new Intl.NumberFormat("pt-BR", {
                   style: "currency",
                   currency: "BRL",
@@ -119,16 +131,16 @@ export function SavingDetails() {
           <ContainerActionButtons>
             <EditButton>
               <Pencil />
-              editar
+              Edit
             </EditButton>
-            <DeleteButton>
+            <DeleteButton onClick={handleDeleteSaving}>
               <Trash2 />
-              excluir
+              Delete
             </DeleteButton>
           </ContainerActionButtons>
         </SavingContainer>
       ) : (
-        <h1>Carregando...</h1>
+        <h1>Loading...</h1>
       )}
     </>
   );

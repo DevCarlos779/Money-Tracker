@@ -2,16 +2,18 @@
   "transactions": [],
   "savings": [
     {
-      "id": "120021",
-      "description": "Transaciton Number 2",
+      "description": "asdas",
       "actualValue": 0,
-      "meta": 12312
+      "meta": 123,
+      "deposits": [],
+      "id": "1YqRSR51kGA"
     },
     {
-      "id": "cIa70lWPq7w",
-      "description": "dasdas",
+      "description": "sadas",
       "actualValue": 0,
-      "meta": 21312
+      "meta": 12312,
+      "deposits": [],
+      "id": "IsMx_ClOwxs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

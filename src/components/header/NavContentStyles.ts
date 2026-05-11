@@ -10,7 +10,6 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
 
   padding: 40px 0;
-  padding-left: 20px;
 
   background-color: ${({ theme }) => theme.black};
   font-family: "Inter", sans-serif;
@@ -20,11 +19,21 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 20px;
+  text-align: center;
 
   h1 {
     color: ${({ theme }) => theme.white};
     font-family: "Poppins", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  strong {
+    color: ${({ theme }) => theme["green-300"]};
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
