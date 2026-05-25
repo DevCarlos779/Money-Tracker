@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TableWrapper = styled.div`
   flex: 1;
+  max-height: 740px;
   overflow-y: auto;
   display: flex;
   align-items: start;
@@ -42,6 +43,7 @@ export const Table = styled.table`
     padding: 1.25rem 2rem;
     background: ${({ theme }) => theme["gray-100"]};
     color: ${({ theme }) => theme["gray-800"]};
+    box-shadow: inset 0 2px 0 ${({ theme }) => theme["gray-200"]};
     transition: background 0.2s ease;
 
     &:first-child {

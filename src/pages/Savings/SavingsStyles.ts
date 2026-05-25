@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const ContainerTransactions = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 0;
   box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 32px;
 
   background-color: ${({ theme }) => theme["gray-100"]};
   border-radius: 12px;
-  padding: 50px;
+  padding: 24px;
 `;
 
 export const HeaderTransactionsPage = styled.div`
@@ -22,9 +22,9 @@ export const HeaderTransactionsPage = styled.div`
 
   button {
     padding: 10px 16px;
-    background-color: ${({ theme }) => theme["green-500"]};
-    color: ${({ theme }) => theme.white};
-    border: 2px solid ${({ theme }) => theme["green-500"]};
+    background-color: ${({ theme }) => theme["green-600"]};
+    color: ${({ theme }) => theme["gray-200"]};
+    border: 2px solid ${({ theme }) => theme["green-600"]};
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -32,7 +32,7 @@ export const HeaderTransactionsPage = styled.div`
   }
 
   button:hover {
-    background-color: ${({ theme }) => theme["green-300"]};
+    background-color: ${({ theme }) => theme["green-500"]};
     border: 2px solid ${({ theme }) => theme["green-500"]};
     color: ${({ theme }) => theme.white};
   }
@@ -40,11 +40,13 @@ export const HeaderTransactionsPage = styled.div`
 
 export const SavingsContainer = styled.div`
   flex: 1;
-  display: grid;
+  min-height: 0;
 
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 40px;
+  display: grid;
+  align-content: start;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 
   overflow-y: auto;
 
@@ -57,19 +59,13 @@ export const SavingsContainer = styled.div`
 `;
 
 export const Conteiner = styled.div`
+  padding: 30px;
   flex: 1;
+  overflow-y: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  margin-bottom: 40px;
-
-  overflow-y: auto;
-
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-
-  padding: 30px;
-  box-sizing: border-box;
 `;

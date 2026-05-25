@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
   flex: 1;
+  max-height: 180px;
   overflow-y: auto;
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
@@ -63,5 +65,24 @@ export const DontHaveTransactionsConteiner = styled.div`
 
   h2 {
     color: ${({ theme }) => theme.black};
+  }
+`;
+
+export const CreateNewTransactionButton = styled(Link)`
+  padding: 10px 16px;
+  background-color: ${({ theme }) => theme["green-600"]};
+  color: ${({ theme }) => theme["gray-200"]};
+  border: 2px solid ${({ theme }) => theme["green-600"]};
+  border-radius: 24px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    background-color: ${({ theme }) => theme["green-500"]};
+    border: 2px solid ${({ theme }) => theme["green-500"]};
+    color: ${({ theme }) => theme.white};
   }
 `;

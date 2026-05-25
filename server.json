@@ -1,19 +1,67 @@
 {
-  "transactions": [],
-  "savings": [
+  "transactions": [
     {
-      "description": "asdas",
-      "actualValue": 0,
-      "meta": 123,
-      "deposits": [],
-      "id": "1YqRSR51kGA"
+      "description": "dasda",
+      "category": "Salary",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:49:32 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 213,
+      "type": "income",
+      "id": "iaoa-_8d6n8"
     },
     {
-      "description": "sadas",
-      "actualValue": 0,
-      "meta": 12312,
-      "deposits": [],
-      "id": "IsMx_ClOwxs"
+      "description": "fdsfsd",
+      "category": "Freelance",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:49:35 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 12312,
+      "type": "income",
+      "id": "Rm7xX3ZJIGs"
+    },
+    {
+      "description": "sdfds",
+      "category": "Food",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:49:39 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 3432,
+      "type": "outcome",
+      "id": "D6BrNEAQYG8"
+    },
+    {
+      "description": "fdsfsd",
+      "category": "Leisure",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:49:44 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 32423,
+      "type": "outcome",
+      "id": "Rxc-48vBU0I"
+    },
+    {
+      "description": "fdgdf",
+      "category": "Health",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:49:52 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 23423,
+      "type": "outcome",
+      "id": "bEqCiCcpHEo"
+    },
+    {
+      "description": "Viagem Aviao",
+      "category": "Saving",
+      "customCategory": "",
+      "date": "Thu May 21 2026 15:51:40 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 20000,
+      "type": "outcome",
+      "id": "Mr-Yq_PJ2Qc"
+    }
+  ],
+  "savings": [
+    {
+      "id": "UJ0GhhxmGAs",
+      "description": "Viagem Aviao",
+      "actualValue": 15000,
+      "meta": 20000,
+      "deposits": []
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -89,7 +89,7 @@ export function NewTransactionModal() {
       }}
     >
       <Dialog.Trigger asChild>
-        <NewTransactionButton>New Transaction</NewTransactionButton>
+        <NewTransactionButton>Create New Transaction</NewTransactionButton>
       </Dialog.Trigger>
 
       <Dialog.Portal>

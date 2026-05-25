@@ -12,7 +12,7 @@ import {
 import { X } from "phosphor-react";
 
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   TransactionContext,
   type Transaction,
@@ -26,6 +26,8 @@ interface NewSavingTransactionModalProps {
 export function NewSavingTransactionModal({
   saving,
 }: NewSavingTransactionModalProps) {
+  const [open, setOpen] = useState(false);
+
   const { createNewTransaction, transactions } = useContext(TransactionContext);
 
   const filteredTransactions = transactions.filter(
@@ -51,6 +53,13 @@ export function NewSavingTransactionModal({
   });
 
   async function handleCreateNewTransaction(data: NewTransactionType) {
+    if (actualValue >= saving.meta) {
+      toast.error("This saving is already complete.!");
+      reset();
+      setOpen(false);
+      return;
+    }
+
     const transaction: Transaction = {
       description: saving.description,
       category: "Saving",
@@ -70,13 +79,7 @@ export function NewSavingTransactionModal({
   }
 
   return (
-    <Dialog.Root
-      onOpenChange={(open) => {
-        if (!open) {
-          reset();
-        }
-      }}
-    >
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <NewTransactionButton>New Transaction</NewTransactionButton>
       </Dialog.Trigger>

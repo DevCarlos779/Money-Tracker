@@ -22,9 +22,9 @@ export const HeaderTransactionsPage = styled.div`
 
   button {
     padding: 10px 16px;
-    background-color: ${({ theme }) => theme["green-500"]};
-    color: ${({ theme }) => theme.white};
-    border: 2px solid ${({ theme }) => theme["green-500"]};
+    background-color: ${({ theme }) => theme["green-600"]};
+    color: ${({ theme }) => theme["gray-200"]};
+    border: 2px solid ${({ theme }) => theme["green-600"]};
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
@@ -32,7 +32,7 @@ export const HeaderTransactionsPage = styled.div`
   }
 
   button:hover {
-    background-color: ${({ theme }) => theme["green-300"]};
+    background-color: ${({ theme }) => theme["green-500"]};
     border: 2px solid ${({ theme }) => theme["green-500"]};
     color: ${({ theme }) => theme.white};
   }

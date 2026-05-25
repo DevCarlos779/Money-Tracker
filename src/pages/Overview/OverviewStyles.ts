@@ -15,6 +15,11 @@ export const ContainerCards = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 32px;
+
+  @media (max-width: 1050px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 `;
 
 export const CardSummary = styled.div`
@@ -30,7 +35,7 @@ export const CardSummary = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 
   h2 {
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: 800;
     margin: 0;
   }

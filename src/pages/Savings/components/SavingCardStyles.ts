@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Card = styled(NavLink)`
-  width: 400px;
-  height: 250px;
+  max-width: 400px;
+  max-height: 250px;
   display: flex;
   align-items: flex-start;
   justify-content: center;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const TableWrapper = styled.div`
   flex: 1;
+  max-height: 250px;
   overflow-y: auto;
   border-radius: 12px;
   background: ${({ theme }) => theme.white};

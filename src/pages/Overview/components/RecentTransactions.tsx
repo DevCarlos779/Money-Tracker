@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import {
+  CreateNewTransactionButton,
   DontHaveTransactionsConteiner,
   Table,
   TableWrapper,
@@ -51,6 +52,9 @@ export function RecentTransactions() {
             <Wallet size={40} />
             <h2>Don't have Recent transactions</h2>
             <p>Add your first transaction to get started.</p>
+            <CreateNewTransactionButton to="/transactions">
+              Create New Transaction
+            </CreateNewTransactionButton>
           </DontHaveTransactionsConteiner>
         </Conteiner>
       )}

@@ -12,12 +12,21 @@ export interface SavingApi {
   meta: number;
 }
 
+export interface SavingPostApi {
+  description: string;
+  actualValue: number;
+  meta: number;
+  deposits: [];
+  id: "UJ0GhhxmGAs";
+}
+
 interface SavingsContextBody {
   savings: SavingApi[];
   createNewSaving: (saving: Saving) => void;
-  getSavingDetails: (id: string) => Promise<SavingApi | undefined>;
+  getSavingDetails: (id: string) => Promise<SavingPostApi | undefined>;
   updateActualValueSaving: (saving: SavingApi) => void;
   deleteSaving: (id: string) => void;
+  editSaving: (saving: SavingPostApi) => void;
 }
 
 interface SavingsContextProviderProps {
@@ -61,10 +70,19 @@ export function SavingsContextProvider({
     await getSavings();
   }
 
+  async function editSaving(saving: SavingPostApi) {
+    await api.put(`/savings/${saving.id}`, {
+      ...saving,
+    });
+
+    await getSavingDetails(saving.id);
+    await getSavings();
+  }
+
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     getSavings();
-  }, []);
+  }, [savings]);
 
   return (
     <SavingsContext.Provider
@@ -74,6 +92,7 @@ export function SavingsContextProvider({
         getSavingDetails,
         updateActualValueSaving,
         deleteSaving,
+        editSaving,
       }}
     >
       {children}

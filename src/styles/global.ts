@@ -15,5 +15,9 @@ export const GlobalStyles = createGlobalStyle`
         font-family: "Inter", sans-serif;
         font-optical-sizing: auto;
 
+        @media (max-width: 1050px) {
+            overflow-y: auto;
+        }
+
     }
 `;

@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { SavingsContext, type SavingApi } from "../../contexts/SavingsContext";
+import {
+  SavingsContext,
+  type SavingPostApi,
+} from "../../contexts/SavingsContext";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
 import {
   ContainerActionButtons,
   DeleteButton,
-  EditButton,
   HeaderTransactionsPage,
   IconCreditCardConteiner,
   IconTransactionsTableConteiner,
@@ -19,19 +21,14 @@ import { SavingTransactionsTable } from "./components/SavingTransactionsTable";
 import { NewSavingTransactionModal } from "./components/NewSavingTransactionModal";
 import { TransactionContext } from "../../contexts/TransactionsContext";
 
-import {
-  ArrowLeft,
-  CreditCard,
-  TableOfContents,
-  Pencil,
-  Trash2,
-} from "lucide-react";
+import { ArrowLeft, CreditCard, TableOfContents, Trash2 } from "lucide-react";
 import { toast } from "react-toastify";
+import { EditSavingModal } from "./components/EditSaving";
 
 export function SavingDetails() {
   const { transactions } = useContext(TransactionContext);
   const { getSavingDetails, deleteSaving } = useContext(SavingsContext);
-  const [saving, setSaving] = useState<SavingApi | undefined>(undefined);
+  const [saving, setSaving] = useState<SavingPostApi | undefined>(undefined);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -55,7 +52,7 @@ export function SavingDetails() {
   }, [id]);
 
   if (!saving) {
-    return <h1>Carregando...</h1>;
+    return;
   }
 
   const actualPercentProgressBar = Math.min((actualValue / saving.meta) * 100);
@@ -129,10 +126,12 @@ export function SavingDetails() {
             <SavingTransactionsTable saving={saving} />
           </SavingTransactionsTableContainer>
           <ContainerActionButtons>
-            <EditButton>
-              <Pencil />
-              Edit
-            </EditButton>
+            <EditSavingModal
+              saving={saving}
+              actualValue={actualValue}
+              getSaving={getSaving}
+            />
+
             <DeleteButton onClick={handleDeleteSaving}>
               <Trash2 />
               Delete
