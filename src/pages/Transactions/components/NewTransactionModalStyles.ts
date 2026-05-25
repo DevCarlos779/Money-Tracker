@@ -49,6 +49,7 @@ export const Overlay = styled(Dialog.Overlay)`
 `;
 
 export const Content = styled(Dialog.Content)`
+  z-index: 2000;
   width: 90%;
   max-width: 32rem;
   max-height: 90vh;
