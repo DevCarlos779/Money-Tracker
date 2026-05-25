@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "server": "json-server server.json -p 3333 -w 500",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
