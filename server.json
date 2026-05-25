@@ -53,6 +53,15 @@
       "amount": 20000,
       "type": "outcome",
       "id": "Mr-Yq_PJ2Qc"
+    },
+    {
+      "description": "dasdsa",
+      "category": "Salary",
+      "customCategory": "",
+      "date": "Mon May 25 2026 14:36:06 GMT-0300 (Horário Padrão de Brasília)",
+      "amount": 123,
+      "type": "income",
+      "id": "pn88GEPqokM"
     }
   ],
   "savings": [
@@ -62,6 +71,90 @@
       "actualValue": 15000,
       "meta": 20000,
       "deposits": []
+    },
+    {
+      "description": "asdasd",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "w0TsyMEX0KA"
+    },
+    {
+      "description": "dasda",
+      "actualValue": 0,
+      "meta": 123,
+      "deposits": [],
+      "id": "RnglDYTwylQ"
+    },
+    {
+      "description": "asdas",
+      "actualValue": 0,
+      "meta": 123,
+      "deposits": [],
+      "id": "jxuRxTIvIDM"
+    },
+    {
+      "description": "dasd",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "p0eZsqgiItk"
+    },
+    {
+      "description": "dasdsa",
+      "actualValue": 0,
+      "meta": 123,
+      "deposits": [],
+      "id": "uUJtMA67DEE"
+    },
+    {
+      "description": "asdas",
+      "actualValue": 0,
+      "meta": 213,
+      "deposits": [],
+      "id": "J8CRkGYGWA4"
+    },
+    {
+      "description": "asdas",
+      "actualValue": 0,
+      "meta": 123,
+      "deposits": [],
+      "id": "1p-WvOFa1KE"
+    },
+    {
+      "description": "asdas",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "-RpH55kcYdE"
+    },
+    {
+      "description": "dsadas",
+      "actualValue": 0,
+      "meta": 12321,
+      "deposits": [],
+      "id": "lPdUMvl74mw"
+    },
+    {
+      "description": "dsadas",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "B63XsYzaC4A"
+    },
+    {
+      "description": "dsadas",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "HkZF6zWdIpg"
+    },
+    {
+      "description": "dsadas",
+      "actualValue": 0,
+      "meta": 12312,
+      "deposits": [],
+      "id": "HwF-MaQihuY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const TableWrapper = styled.div`
-  flex: 1;
+  width: 100%;
+  max-width: 100%;
   max-height: 740px;
+  overflow-x: auto;
   overflow-y: auto;
-  display: flex;
-  align-items: start;
-  justify-content: center;
+  display: block;
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -19,10 +19,15 @@ export const TableWrapper = styled.div`
     font-weight: 500;
     padding: 2rem 0;
   }
+
+  @media (max-width: 768px) {
+    max-height: 100%;
+  }
 `;
 
 export const Table = styled.table`
   width: 100%;
+  min-width: 650px;
   border-collapse: separate;
   border-spacing: 0 0.5rem;
   margin-top: 1rem;
@@ -37,6 +42,7 @@ export const Table = styled.table`
     font-size: 14px;
     font-weight: 600;
     color: ${({ theme }) => theme["gray-700"]};
+    white-space: nowrap;
   }
 
   td {
@@ -44,40 +50,32 @@ export const Table = styled.table`
     background: ${({ theme }) => theme["gray-100"]};
     color: ${({ theme }) => theme["gray-800"]};
     box-shadow: inset 0 2px 0 ${({ theme }) => theme["gray-200"]};
-    transition: background 0.2s ease;
+  }
 
-    &:first-child {
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-    }
+  tbody tr:hover {
+    background: ${({ theme }) => theme["gray-50"]};
+  }
 
-    &:last-child {
-      border-top-right-radius: 6px;
-      border-bottom-right-radius: 6px;
-    }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
 
-    div {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 12px;
+  @media (max-width: 768px) {
+    th,
+    td {
+      padding: 0.8rem 1rem;
+      font-size: 13px;
     }
   }
 
-  tbody tr {
-    border-bottom: 1px solid ${({ theme }) => theme["gray-200"]};
-    transition:
-      background 0.2s ease,
-      transform 0.1s ease;
-    cursor: default;
-
-    &:hover {
-      background: ${({ theme }) => theme["gray-50"]};
-      transform: translateY(-1px);
-    }
-
-    &:last-child {
-      border-bottom: none;
+  @media (max-width: 480px) {
+    th,
+    td {
+      padding: 0.6rem 0.8rem;
+      font-size: 12px;
     }
   }
 `;
@@ -85,31 +83,36 @@ export const Table = styled.table`
 export const DeleteButton = styled.button`
   border-radius: 6px;
   cursor: pointer;
-  padding: 6px 10px;
-  transition:
-    background 0.2s ease,
-    border 0.2s ease;
+  padding: 8px;
+  transition: all 0.2s ease;
   border: 2px solid ${({ theme }) => theme["red-500"]};
   background-color: ${({ theme }) => theme["red-500"]};
   color: ${({ theme }) => theme.white};
 
   &:hover {
     background-color: ${({ theme }) => theme["red-300"]};
-    border: 2px solid ${({ theme }) => theme["red-500"]};
-    color: ${({ theme }) => theme.white};
+    border-color: ${({ theme }) => theme["red-500"]};
+  }
+
+  @media (max-width: 480px) {
+    padding: 4px 8px;
+    font-size: 12px;
   }
 `;
 
 export const Conteiner = styled.div`
-  padding: 30px;
+  width: 100%;
+  padding: 24px;
   flex: 1;
-  overflow-y: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow-x: auto;
+  display: block;
   border-radius: 12px;
   background: ${({ theme }) => theme.white};
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
 `;
 
 export const DontHaveTransactionsConteiner = styled.div`
@@ -119,8 +122,19 @@ export const DontHaveTransactionsConteiner = styled.div`
   justify-content: center;
   gap: 25px;
   color: ${({ theme }) => theme["gray-400"]};
+  text-align: center;
+  padding: 20px;
 
   h2 {
     color: ${({ theme }) => theme.black};
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    gap: 15px;
+
+    h2 {
+      font-size: 1rem;
+    }
   }
 `;

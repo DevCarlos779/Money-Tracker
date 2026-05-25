@@ -4,7 +4,9 @@ export const ContainerTransactions = styled.div`
   width: 100%;
   height: 100%;
   min-height: 0;
+  max-height: 885px;
   box-sizing: border-box;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -13,6 +15,16 @@ export const ContainerTransactions = styled.div`
   background-color: ${({ theme }) => theme["gray-100"]};
   border-radius: 12px;
   padding: 24px;
+
+  overflow: hidden;
+
+  @media (max-width: 890px) {
+    padding: 12px;
+  }
+
+  @media (max-width: 750px) {
+    padding: 0px;
+  }
 `;
 
 export const HeaderTransactionsPage = styled.div`
@@ -36,6 +48,15 @@ export const HeaderTransactionsPage = styled.div`
     border: 2px solid ${({ theme }) => theme["green-500"]};
     color: ${({ theme }) => theme.white};
   }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 export const SavingsContainer = styled.div`
@@ -56,6 +77,26 @@ export const SavingsContainer = styled.div`
 
   padding: 30px;
   box-sizing: border-box;
+
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 24px;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  @media (max-width: 480px) {
+    padding: 12px;
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Conteiner = styled.div`

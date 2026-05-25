@@ -4,15 +4,23 @@ export const ContainerTransactions = styled.div`
   width: 100%;
   min-height: 100%;
   box-sizing: border-box;
+  flex: 1;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   gap: 32px;
 
   background-color: ${({ theme }) => theme["gray-100"]};
   border-radius: 12px;
   padding: 24px;
+
+  @media (max-width: 890px) {
+    padding: 12px;
+  }
+
+  @media (max-width: 750px) {
+    padding: 0px;
+  }
 `;
 
 export const HeaderTransactionsPage = styled.div`
@@ -35,5 +43,14 @@ export const HeaderTransactionsPage = styled.div`
     background-color: ${({ theme }) => theme["green-500"]};
     border: 2px solid ${({ theme }) => theme["green-500"]};
     color: ${({ theme }) => theme.white};
+  }
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+      width: 100%;
+    }
   }
 `;

@@ -39,4 +39,8 @@ export const Main = styled.main`
     width: 100%;
     margin-top: 140px;
   }
+
+  @media (max-width: 750px) {
+    padding: 20px;
+  }
 `;
