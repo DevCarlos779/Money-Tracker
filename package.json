@@ -2,7 +2,6 @@
   "name": "money-tracker",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "server": "json-server server.json -p 3333 -w 500",
