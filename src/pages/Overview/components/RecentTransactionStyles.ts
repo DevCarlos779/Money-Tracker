@@ -60,6 +60,7 @@ export const DontHaveTransactionsConteiner = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   gap: 20px;
   color: ${({ theme }) => theme["gray-400"]};
 
