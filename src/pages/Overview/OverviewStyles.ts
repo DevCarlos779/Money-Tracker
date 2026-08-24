@@ -36,7 +36,9 @@ export const CardSummary = styled.div`
   gap: 20px;
 
   box-shadow: 0 4px 20px rgba(16, 24, 40, 0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -75,8 +77,11 @@ export const IconBadge = styled.span<{ $variant: "green" | "red" }>`
   justify-content: center;
   flex-shrink: 0;
 
-  background-color: ${({ theme, $variant }) =>
-    $variant === "green" ? "rgba(16, 185, 129, 0.12)" : "rgba(225, 29, 72, 0.10)"};
+  background-color: ({ $variant }) =>
+    $variant === "green"
+      ? "rgba(16, 185, 129, 0.12)"
+      : "rgba(225, 29, 72, 0.10)";
+
   color: ${({ theme, $variant }) =>
     $variant === "green" ? theme["green-600"] : theme["red-600"]};
 `;
