@@ -66,6 +66,11 @@ export function Chart({ data }: ChartProps) {
             <YAxis />
 
             <Tooltip
+              contentStyle={{
+                borderRadius: 10,
+                border: "1px solid #E2E5EA",
+                boxShadow: "0 8px 24px rgba(16,24,40,0.08)",
+              }}
               formatter={(value) => {
                 const val = Number(value ?? 0);
 
@@ -76,7 +81,7 @@ export function Chart({ data }: ChartProps) {
               }}
             />
 
-            <Bar dataKey="total" fill="#B93838" />
+            <Bar dataKey="total" fill="#E11D48" radius={[6, 6, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       )}

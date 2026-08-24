@@ -37,7 +37,7 @@ export const HeaderTransactionsPage = styled.div`
     background-color: ${({ theme }) => theme["green-600"]};
     color: ${({ theme }) => theme["gray-200"]};
     border: 2px solid ${({ theme }) => theme["green-600"]};
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     font-size: 16px;
@@ -72,8 +72,8 @@ export const SavingsContainer = styled.div`
   overflow-y: auto;
 
   border-radius: 12px;
-  background: ${({ theme }) => theme.white};
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: ${({ theme }) => theme["gray-50"]};
+  box-shadow: inset 0 0 0 1px ${({ theme }) => theme["gray-200"]};
 
   padding: 30px;
   box-sizing: border-box;

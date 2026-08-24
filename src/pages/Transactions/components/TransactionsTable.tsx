@@ -1,4 +1,5 @@
 import {
+  Amount,
   Conteiner,
   DeleteButton,
   DontHaveTransactionsConteiner,
@@ -39,15 +40,13 @@ export function TransactionsTable() {
                     {t.category != "Other" ? t.category : t.customCategory}
                   </td>
                   <td>{new Date(t.date).toLocaleDateString("pt-BR")}</td>
-                  <td
-                    style={{
-                      color: t.type === "outcome" ? "red" : "green",
-                    }}
-                  >
-                    {new Intl.NumberFormat("pt-BR", {
-                      style: "currency",
-                      currency: "BRL",
-                    }).format(t.amount)}
+                  <td>
+                    <Amount $type={t.type}>
+                      {new Intl.NumberFormat("pt-BR", {
+                        style: "currency",
+                        currency: "BRL",
+                      }).format(t.amount)}
+                    </Amount>
                   </td>
                   <td>
                     <div>

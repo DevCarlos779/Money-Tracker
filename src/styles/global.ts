@@ -20,4 +20,22 @@ export const GlobalStyles = createGlobalStyle`
         }
 
     }
+
+    h1, h2, h3, h4 {
+        font-family: "Sora", sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${(props) => props.theme["gray-300"]};
+        border-radius: 8px;
+    }
 `;

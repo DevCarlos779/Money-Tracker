@@ -33,7 +33,7 @@ export const HeaderTransactionsPage = styled.div`
     background-color: ${({ theme }) => theme["green-600"]};
     color: ${({ theme }) => theme["gray-200"]};
     border: 2px solid ${({ theme }) => theme["green-600"]};
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease-in-out;
     font-size: 16px;

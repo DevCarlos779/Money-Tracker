@@ -80,6 +80,12 @@ export const Table = styled.table`
   }
 `;
 
+export const Amount = styled.span<{ $type: "income" | "outcome" }>`
+  font-weight: 600;
+  color: ${({ theme, $type }) =>
+    $type === "outcome" ? theme["red-600"] : theme["green-600"]};
+`;
+
 export const DeleteButton = styled.button`
   border-radius: 6px;
   cursor: pointer;

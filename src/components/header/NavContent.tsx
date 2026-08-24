@@ -5,6 +5,7 @@ import {
   PiggyBank,
   Menu,
   X,
+  Wallet,
 } from "lucide-react";
 
 import {
@@ -21,9 +22,14 @@ export function NavContent() {
   return (
     <ContentContainer>
       <Div>
-        <h1>
-          Money<strong>Tracker</strong>
-        </h1>
+        <div className="logo">
+          <span className="logo-mark">
+            <Wallet size={18} strokeWidth={2.5} />
+          </span>
+          <h1>
+            Money<strong>Tracker</strong>
+          </h1>
+        </div>
 
         <MenuButton onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={28} /> : <Menu size={28} />}

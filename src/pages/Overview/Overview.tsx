@@ -7,6 +7,7 @@ import {
   DivInformacoesCard,
   CardSummaryGreen,
   CardSummaryRed,
+  IconBadge,
 } from "./OverviewStyles";
 import { Chart } from "./components/Chart";
 import { useContext } from "react";
@@ -59,7 +60,9 @@ export function Overview() {
           </h2>
           <DivInformacoesCard>
             <p>Total Incomes</p>
-            <BanknoteArrowUp size={20} strokeWidth={2} />
+            <IconBadge $variant="green">
+              <BanknoteArrowUp size={20} strokeWidth={2} />
+            </IconBadge>
           </DivInformacoesCard>
         </CardSummaryGreen>
 
@@ -73,7 +76,9 @@ export function Overview() {
           <DivInformacoesCard>
             <p>Total Outcomes</p>
 
-            <BanknoteArrowDown size={20} strokeWidth={2} />
+            <IconBadge $variant="red">
+              <BanknoteArrowDown size={20} strokeWidth={2} />
+            </IconBadge>
           </DivInformacoesCard>
         </CardSummaryRed>
 
@@ -88,7 +93,9 @@ export function Overview() {
             <DivInformacoesCard>
               <p>Total Profit</p>
 
-              <Receipt size={20} strokeWidth={2} />
+              <IconBadge $variant="green">
+                <Receipt size={20} strokeWidth={2} />
+              </IconBadge>
             </DivInformacoesCard>
           </CardSummaryGreen>
         ) : (
@@ -101,7 +108,9 @@ export function Overview() {
             </h2>
             <DivInformacoesCard>
               <p>Total Profit</p>
-              <Receipt size={20} strokeWidth={2} />
+              <IconBadge $variant="red">
+                <Receipt size={20} strokeWidth={2} />
+              </IconBadge>
             </DivInformacoesCard>
           </CardSummaryRed>
         )}

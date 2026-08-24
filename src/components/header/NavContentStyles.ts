@@ -11,7 +11,7 @@ export const ContentContainer = styled.div`
 
   background-color: ${({ theme }) => theme.black};
 
-  padding: 40px 0;
+  padding: 36px 0;
 
   font-family: "Inter", sans-serif;
 
@@ -19,7 +19,7 @@ export const ContentContainer = styled.div`
 
   @media (max-width: 1320px) {
     width: 100%;
-    padding: 30px 40px;
+    padding: 24px 32px;
 
     flex-direction: row;
     justify-content: center;
@@ -34,30 +34,49 @@ export const Div = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 40px;
+  gap: 44px;
 
-  padding: 20px;
+  padding: 0 24px;
 
   text-align: center;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .logo-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, ${({ theme }) => theme["green-500"]}, ${({ theme }) => theme["green-300"]});
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${({ theme }) => theme.black};
+    flex-shrink: 0;
+  }
 
   h1 {
     color: ${({ theme }) => theme.white};
 
-    font-family: "Poppins", sans-serif;
-    font-size: 22px;
+    font-family: "Sora", sans-serif;
+    font-size: 20px;
     font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
   }
 
   strong {
     color: ${({ theme }) => theme["green-300"]};
 
-    font-family: "Poppins", sans-serif;
-    font-size: 22px;
+    font-family: "Sora", sans-serif;
+    font-size: 20px;
     font-weight: 700;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
   }
 
   @media (max-width: 1320px) {
@@ -65,6 +84,7 @@ export const Div = styled.div`
 
     justify-content: space-between;
     align-items: center;
+    padding: 0;
   }
 `;
 
@@ -94,7 +114,7 @@ export const DivButtonsNavBar = styled.div<DivButtonsNavBarProps>`
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: 6px;
 
   @media (max-width: 1320px) {
     flex-direction: row;
@@ -108,8 +128,9 @@ export const DivButtonsNavBar = styled.div<DivButtonsNavBarProps>`
     right: 0;
 
     background-color: ${({ theme }) => theme.black};
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 
-    padding: 20px 40px;
+    padding: 20px 32px;
 
     flex-direction: column;
 
@@ -121,24 +142,24 @@ export const DivButtonsNavBar = styled.div<DivButtonsNavBarProps>`
 
 export const NavButton = styled(NavLink)`
   width: 100%;
-  max-width: 224px;
-  height: 48px;
+  max-width: 216px;
+  height: 46px;
 
   display: flex;
   align-items: center;
 
   gap: 10px;
 
-  padding: 0 18px;
+  padding: 0 16px;
 
   text-decoration: none;
 
-  border-radius: 8px;
+  border-radius: 10px;
 
-  color: ${({ theme }) => theme["gray-300"]};
+  color: ${({ theme }) => theme["gray-350"]};
 
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 14.5px;
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -149,35 +170,23 @@ export const NavButton = styled(NavLink)`
   }
 
   &:hover {
-    background-color: ${({ theme }) => theme["gray-700"]};
+    background-color: rgba(255, 255, 255, 0.06);
 
     color: ${({ theme }) => theme.white};
   }
 
   &.active {
-    background-color: ${({ theme }) => theme["green-600"]};
+    background-color: ${({ theme }) => theme["green-500"]};
 
-    color: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.black};
 
-    font-weight: 600;
+    font-weight: 700;
 
     position: relative;
   }
 
-  &.active::before {
-    content: "";
-
-    position: absolute;
-
-    left: 10px;
-    top: 10px;
-    bottom: 10px;
-
-    width: 4px;
-
-    border-radius: 4px;
-
-    background: ${({ theme }) => theme["green-300"]};
+  &.active svg {
+    color: ${({ theme }) => theme.black};
   }
 
   @media (max-width: 900px) {
